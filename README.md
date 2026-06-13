@@ -19,7 +19,7 @@ npm install
 {
   module: "MMM-CanvasCalendar",
   position: "top_right",
-  header: "Assignments | OT 511 | PP500",
+  header: "CANVAS | OT 511 | PP500",
   config: {
     maximumEntries: 5,
     maximumNumberOfDays: 365,
