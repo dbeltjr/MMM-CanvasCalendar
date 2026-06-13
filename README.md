@@ -1,6 +1,8 @@
 # MagicMirror Canvas Calendar
 This is a module for `MagicMirror²` which displays upcoming assignments from the Canvas LMS via the built-in iCal calendar feed. No API token is required. The Canvas LMS is used by colleges, universities and other institutions for coursework.
 
+![Screenshot](screenshot.png)
+
 ## Installation
 1. Clone this repository into your MagicMirror `modules` folder.
 ```
