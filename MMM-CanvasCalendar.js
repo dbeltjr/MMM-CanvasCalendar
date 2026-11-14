@@ -161,19 +161,24 @@ Module.register("MMM-CanvasCalendar", {
 				if (event.today) {
 					timeWrapper.innerHTML = CalendarUtils.capFirst(this.translate("TODAY"));
 				} else if (event.tomorrow) {
-					timeWrapper.innerHTML = CalendarUtils.capFirst(this.translate("TOMORROW"));
+					timeWrapper.innerHTML = "Tom";
 				} else {
 					timeWrapper.innerHTML = CalendarUtils.capFirst(startMoment.format(this.config.fullDayEventDateFormat));
 				}
 			} else {
 				if (startMoment.isSameOrAfter(now)) {
 					if (!this.config.hideTime) {
-						timeWrapper.innerHTML = CalendarUtils.capFirst(startMoment.calendar(null, { sameElse: this.config.dateFormat }));
+						timeWrapper.innerHTML = CalendarUtils.capFirst(startMoment.calendar(null, {
+						sameDay: "[Today at] LT",
+						nextDay: "[Tom at] LT",
+						nextWeek: "ddd [at] LT",
+						sameElse: this.config.dateFormat
+						}));
 					} else {
 						timeWrapper.innerHTML = CalendarUtils.capFirst(startMoment.calendar(null, {
 							sameDay: this.config.showTimeToday ? "LT" : `[${this.translate("TODAY")}]`,
-							nextDay: `[${this.translate("TOMORROW")}]`,
-							nextWeek: "dddd",
+							nextDay: "[Tom]",
+							nextWeek: "ddd",
 							sameElse: this.config.dateFormat
 						}));
 					}
